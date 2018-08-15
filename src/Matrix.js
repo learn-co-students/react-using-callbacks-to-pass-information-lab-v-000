@@ -30,7 +30,7 @@ export default class Matrix extends Component {
 
 
   render() {
-    console.log(this.state.selectedColor)
+    
     return (
       <div id="app">
         <ColorSelector setSelectedColor={this.setSelectedColor} />
