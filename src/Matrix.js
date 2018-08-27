@@ -12,9 +12,9 @@ export default class Matrix extends Component {
     }
   }
 
-  handleColor = (color) => {
+  setSelectedColor = (col) => {
     this.setState({
-      selectedColor: color
+      selectedColor: col
     })
   }
 
@@ -34,7 +34,7 @@ export default class Matrix extends Component {
   render() {
     return (
       <div id="app">
-        <ColorSelector handleColor={this.handleColor} />
+        <ColorSelector setSelectedColor={this.setSelectedColor} />
         <div id="matrix">
           {this.genMatrix()}
         </div>
