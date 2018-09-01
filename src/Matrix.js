@@ -7,6 +7,20 @@ export default class Matrix extends Component {
 
   constructor() {
     super()
+    this.state = {
+      values: null,
+      color: null
+    }
+  }
+
+  changeColor = (selectedColor) => {
+    this.setState({
+      color: selectedColor
+    })
+  }
+
+  selectedColor = () => {
+    return this.state.color
   }
 
   genRow = (vals) => (
@@ -21,7 +35,7 @@ export default class Matrix extends Component {
   render() {
     return (
       <div id="app">
-        <ColorSelector />
+        <ColorSelector switchColor={this.changeColor} />
         <div id="matrix">
           {this.genMatrix()}
         </div>
