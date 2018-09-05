@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
+import chromeBoi from './data.js'
+import Cell from './Cell.js'
+import ColorSelector from './ColorSelector.js'
 
-export default class ColorSelector extends Component {
+
+export default class Matrix extends Component {  
   
-  makeColorSwatches = () => (
-    ["#F00", "#F80", "#FF0", "#0F0", "#00F", "#508", "#90D", "#FFF", "#000"].map((str, idx) => {
-      return <div key={idx} className="color-swatch" style={{backgroundColor: str}}/>
+     setSelectedColor = (newColor) => {
+      this.setState({
+        selectedColor: newColor
     })
-  )
+  }
+  getSelectedColor = () => (this.state.selectedColor)
+   genRow = (vals) => (
+    vals.map((val, idx) => <Cell key={idx} color={val} getSelectedColor={this.getSelectedColor} />)
+   )
   
-  render() {
+   genMatrix = () => (
+    this.props.values.map((rowVals, idx) => <div key={idx} className="row">{this.genRow(rowVals)}</div>)
+  )
+    render() {
     return (
-      <div id="colorSelector">
-        {this.makeColorSwatches()}
-      </div>
+      <div id="app">
+        <ColorSelector setSelectedColor={this.setSelectedColor} />
+        <div id="matrix">
+          {this.genMatrix()}
+        </div>
+        </div>
     )
   }
-  
+}
+  Matrix.defaultProps = {
+  values: chromeBoi
 }
