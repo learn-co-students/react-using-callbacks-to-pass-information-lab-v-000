@@ -11,6 +11,7 @@ export default class Cell extends Component {
 
   changeColor = () => {
     debugger
+    //setState takes in an argument, which is why the parenthesis are on the outside of the javascript on the inside
     this.setState( {
       selectedColor: this.props.getSelectedColor()
     })
@@ -18,6 +19,8 @@ export default class Cell extends Component {
 
   render() {
     return (
+      //changeColor actually changes the cell's color through the propert of state's 'selectedColor'
+      //backgroundColor changes automatically as according to whatever state is
       <div className="cell" onClick={this.changeColor} style={{backgroundColor: this.state.selectedColor}}>
       </div>
     )

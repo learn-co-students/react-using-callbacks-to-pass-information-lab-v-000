@@ -27,7 +27,8 @@ export default class Matrix extends Component {
   genMatrix = () => (
     this.props.values.map((rowVals, idx) => <div key={idx} className="row">{this.genRow(rowVals)}</div>)
   )
-
+//getSelectedColor is passed to Cell because we need to know the MATRIX's state property: selectedColor, which is the color that has been chosen from ColorSelector. It's the color the cells will change into
+//setColor gets the color from ColorSelector, who calls it and sends it up the parent function through a callback
   render() {
     return (
       <div id="app">
