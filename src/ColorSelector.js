@@ -12,7 +12,6 @@ export default class ColorSelector extends Component {
     return (
       <div id="colorSelector">
         {this.makeColorSwatches()}
-        <h2>Hello World</h2>
       </div>
     )
   }
