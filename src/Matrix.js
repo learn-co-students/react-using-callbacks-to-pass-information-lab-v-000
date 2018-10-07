@@ -9,15 +9,20 @@ export default class Matrix extends Component {
     super(props)
     this.state = {color: null}
 
-    this.setColor = this.setColor
+    this.setColor = this.setColor.bind(this)
+    this.getStateColor = this.getStateColor.bind(this)
   }
 
-  setColor = (color) => {
-    this.setState({ color: color });
+  setColor = (str) => {
+    this.setState( { color: str } );
+  }
+
+  getStateColor = () => {
+    return this.state.color
   }
 
   genRow = (vals) => (
-    vals.map((val, idx) => <Cell key={idx} color={val} />)
+    vals.map((val, idx) => <Cell key={idx} color={val} getStateColor={this.getStateColor} />)
   )
 
   genMatrix = () => (
