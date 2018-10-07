@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Matrix from './Matrix.js';
 
 export default class Cell extends Component {
   
@@ -8,10 +9,14 @@ export default class Cell extends Component {
       color: this.props.color
     }
   }
+
+  handleClick() {
+    
+  }
   
   render() {
     return (
-      <div className="cell" style={{backgroundColor: this.state.color}}>
+      <div className="cell" style={{backgroundColor: this.state.color}} onClick={this.handleClick} >
       </div>
     )
   }
