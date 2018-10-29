@@ -26,15 +26,9 @@ For this lab, we have three components:
     └── Cell (x1000)
 ```
 
-We would like to implement the following behavior: when a `Cell` is clicked, its
-background color becomes the current selected color. With our `ColorSelector`
-component providing the user interface to select a specific color, we need _some
-way_ for `Cell` to know about the currently selected color. To do this, we will
-have the parent component, `Matrix`, keep track of the current selected color.
+We would like to implement the following behavior: when a `Cell` is clicked, its background color becomes the current selected color. With our `ColorSelector` component providing the user interface to select a specific color, we need _some way_ for `Cell` to know about the currently selected color. To do this, we will have the parent component, `Matrix`, keep track of the current selected color.
 
-Because passing information between children components is taboo in React, (i.e.
-passing information between `ColorSelector` and a `Cell`), we need to make sure
-that the following is implemented:
+Because passing information between children components is taboo in React, (i.e. passing information between `ColorSelector` and a `Cell`), we need to make sure that the following is implemented:
 
 - `ColorSelector` has a way to set some 'selected color' in `Matrix` when a user selects a color
 - `Cell` has a way to know what the current selected color is when it is clicked
