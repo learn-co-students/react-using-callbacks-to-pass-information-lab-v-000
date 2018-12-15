@@ -8,7 +8,7 @@ export default class Matrix extends Component {
   constructor() {
     super();
     this.state = {
-      selectedColor: "#FOF"
+      selectedColor: "#FF6347"
     }
   }
 
@@ -16,12 +16,11 @@ export default class Matrix extends Component {
     this.setState({
       selectedColor: color
     });
-    console.log(`chosen coloris ${color}`);
+    console.log(`set Color says chosen color is ${color}`);
   }
 
   sendColorToCell = () => {
-    this.state.selectedColor
-    console.log(`the color sent to the cell is ${this.state.selectedColor}`)
+    return this.state.selectedColor;
   }
 
   genRow = (vals) => (
