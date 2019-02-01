@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 
 export default class Cell extends Component {
-  
-  constructor(props) {
-    super(props)
-    this.state = {
-      color: this.props.color
-    }
-  }
-  
+
+  // Matrix.genRow calls Cell which creates a div for each color value contained in the array of color values passed to it by Matrix.genMatrix. Cell renders the div with class and style attributes. The background color is set to this.state.color.
   render() {
     return (
-      <div className="cell" style={{backgroundColor: this.state.color}}>
+      <div className="cell" onClick={this.props.setCellColor} style={{ backgroundColor: this.props.color }}>
       </div>
     )
   }
-  
+
 }
