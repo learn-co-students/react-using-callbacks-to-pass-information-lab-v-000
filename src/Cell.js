@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+export {handleClick} from './Cell.js';
+
 export default class Cell extends Component {
   
   constructor(props) {
@@ -8,12 +10,22 @@ export default class Cell extends Component {
       color: this.props.color
     }
   }
+
+  handleClick = () => {
+    const currentColor = this.props.getSelector()
+    this.setState({
+      color: currentColor
+    })
+  }
   
   render() {
     return (
-      <div className="cell" style={{backgroundColor: this.state.color}}>
+      <div 
+        className="cell"
+        style={{backgroundColor: this.state.color}}
+        onClick={this.handleClick}>
       </div>
     )
   }
-  
+
 }
