@@ -20,24 +20,23 @@ export default class Matrix extends Component {
     this.props.values.map((rowVals, idx) => <div key={idx} className="row">{this.genRow(rowVals)}</div>)
   )
 
-  colorSet = (color) => (
+  setSelectColor = (newColor) => (
     this.setState({
-      selectedColor: color
+      selectedColor: newColor
     })
   )
 
   render() {
-
     return (
       <div id="app">
-        <ColorSelector />
+        <ColorSelector setSelectColor={this.setSelectColor}/>
+        {this.state.selectedColor}
         <div id="matrix">
           {this.genMatrix()}
         </div>
       </div>
     )
   }
-
 }
 
 Matrix.defaultProps = {
