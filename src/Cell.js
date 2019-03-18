@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {passState} from './Matrix.js'
 
 export default class Cell extends Component {
   
@@ -7,6 +8,12 @@ export default class Cell extends Component {
     this.state = {
       color: this.props.color
     }
+  }
+
+  handleClick = () => {
+    this.setState( {
+      color: passState()
+    })
   }
   
   render() {
