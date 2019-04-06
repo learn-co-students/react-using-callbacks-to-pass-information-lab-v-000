@@ -5,6 +5,7 @@ import ColorSelector from './ColorSelector.js'
 
 export default class Matrix extends Component {
 
+// set initial color
   constructor() {
     super()
      this.state = {
