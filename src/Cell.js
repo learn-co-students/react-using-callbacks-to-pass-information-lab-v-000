@@ -8,13 +8,14 @@ export default class Cell extends Component {
 		};
 	}
 	handleClick = () => {
-		const newColor = this.props.getGenColor();
+		debugger;
+		const newColor = this.props.getSelectedColor();
 		this.setState({
 			color: newColor
 		});
 	};
 
 	render() {
-		return <div className="cell" onClick={this.handleClick()} style={{ backgroundColor: this.state.color }} />;
+		return <div className="cell" onClick={this.handleClick} style={{ backgroundColor: this.state.color }} />;
 	}
 }

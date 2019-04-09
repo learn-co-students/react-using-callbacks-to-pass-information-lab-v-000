@@ -18,11 +18,11 @@ export default class Matrix extends Component {
 		});
 	};
 
-	getGenColor = () => {
-		this.state.color;
+	getSelectedColor = () => {
+		return this.state.color;
 	};
 
-	genRow = (vals) => vals.map((val, idx) => <Cell key={idx} color={val} getGenColor={this.getGenColor} />);
+	genRow = (vals) => vals.map((val, idx) => <Cell key={idx} color={val} getSelectedColor={this.getSelectedColor} />); // replace me and render a cell component instead!
 
 	genMatrix = () =>
 		this.props.values.map((rowVals, idx) => (
@@ -34,7 +34,7 @@ export default class Matrix extends Component {
 	render() {
 		return (
 			<div id="app">
-				<ColorSelector genColor={this.genColor} />
+				<ColorSelector getSelectedColor={this.getSelectedColor} genColor={this.genColor} />
 				<div id="matrix">{this.genMatrix()}</div>
 			</div>
 		);
