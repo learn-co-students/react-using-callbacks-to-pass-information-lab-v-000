@@ -8,15 +8,11 @@ export default class Cell extends Component {
       color: this.props.color
     }
   }
-  
-  setCellColor = () => {
-    
-
-      <Cell this.state.color />
-  }
 
   handleClick = () => {
-    this.state.color = { }
+    this.state.color = { 
+
+    }
   }
 
   render() {
