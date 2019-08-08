@@ -9,6 +9,16 @@ export default class Cell extends Component {
     }
   }
   
+  setCellColor = () => {
+    
+
+      <Cell this.state.color />
+  }
+
+  handleClick = () => {
+    this.state.color = { }
+  }
+
   render() {
     return (
       <div className="cell" style={{backgroundColor: this.state.color}}>
