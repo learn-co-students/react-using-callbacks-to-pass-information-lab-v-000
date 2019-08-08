@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import chromeBoi from './data.js'
 import Cell from './Cell.js'
 import ColorSelector from './ColorSelector.js'
+import { timingSafeEqual } from 'crypto';
 
 export default class Matrix extends Component {
 
@@ -35,7 +36,7 @@ export default class Matrix extends Component {
   render() {
     return (
       <div id="app">
-        <ColorSelector />
+        <ColorSelector setColor={ this.setColor } />
         <div id="matrix">
           {this.genMatrix()}
         </div>

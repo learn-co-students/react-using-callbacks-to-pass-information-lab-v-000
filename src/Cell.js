@@ -9,11 +9,11 @@ export default class Cell extends Component {
     }
   }
 
-  handleClick = () => {
-    this.state.color = { 
+  // handleClick = () => {
+  //   this.state.color = { 
 
-    }
-  }
+  //   }
+  // }
 
   render() {
     return (
