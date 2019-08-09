@@ -11,7 +11,7 @@ export default class Cell extends Component {
 
   handleClick = () => {
     const newColor = this.props.passStateToCell()
-    this.setState = ({
+    this.setState({
       color: newColor
     })
   }
