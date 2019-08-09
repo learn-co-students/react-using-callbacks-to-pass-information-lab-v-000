@@ -2,28 +2,26 @@ import React, { Component } from 'react';
 import chromeBoi from './data.js'
 import Cell from './Cell.js'
 import ColorSelector from './ColorSelector.js'
-import { timingSafeEqual } from 'crypto';
 
 export default class Matrix extends Component {
 
   constructor() {
     super()
     this.state = {
-       selectedSwatch: '#fff' }
+      selectedColor: '#FFF'
+    }
   }
 
-  setColor = ( colorStr ) => {
+  setSelectedColor = (newColor) => {
     this.setState({
-      selectedSwatch: colorStr
+      selectedColor: newColor
     })
   }
 
-  passStateToCell = () => {
-    this.state.selectedSwatch
-  }
+  getSelectedColor = () => (this.state.selectedColor)
 
   genRow = (vals) => (
-    vals.map((val, idx) => <Cell key={idx} passStateToCell={this.passStateToCell} />)
+    vals.map((val, idx) => <Cell key={idx} color={val} getSelectedColor={this.getSelectedColor} />)
   )
 
   genMatrix = () => (
@@ -33,7 +31,7 @@ export default class Matrix extends Component {
   render() {
     return (
       <div id="app">
-        <ColorSelector setColor={ this.setColor } />
+        <ColorSelector setSelectedColor={this.setSelectedColor} />
         <div id="matrix">
           {this.genMatrix()}
         </div>
