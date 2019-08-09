@@ -6,32 +6,29 @@ import { timingSafeEqual } from 'crypto';
 
 export default class Matrix extends Component {
 
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
-       color: this.props.color }
+       selectedSwatch: '#fff' }
   }
 
   setColor = ( colorStr ) => {
     this.setState({
-      color: colorStr
+      selectedSwatch: colorStr
     })
   }
 
-  // setCellColor = () => {
-  //   this.props.color = {
-  //     <Cell this.state.color />
-  //   }
-  // }
+  passStateToCell = () => {
+    this.state.selectedSwatch
+  }
 
   genRow = (vals) => (
-    vals.map((val, idx) => <Cell key={idx} color={val} />)
+    vals.map((val, idx) => <Cell key={idx} passStateToCell={this.passStateToCell} />)
   )
 
   genMatrix = () => (
     this.props.values.map((rowVals, idx) => <div key={idx} className="row">{this.genRow(rowVals)}</div>)
   )
-
 
   render() {
     return (
