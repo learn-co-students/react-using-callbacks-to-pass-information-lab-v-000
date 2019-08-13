@@ -8,10 +8,17 @@ export default class Cell extends Component {
       color: this.props.color
     }
   }
+
+  clicker = () => {
+    this.setState({color: this.props.getSelectedColor()});
+    console.log("Color" + this.state.color);
+  }
   
   render() {
     return (
-      <div className="cell" style={{backgroundColor: this.state.color}}>
+      <div className="cell" 
+           style={{backgroundColor: this.state.color}}
+           onClick={this.clicker}>
       </div>
     )
   }
