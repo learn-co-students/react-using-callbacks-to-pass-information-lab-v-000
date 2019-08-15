@@ -10,14 +10,14 @@ export default class Cell extends Component {
   }
 
   handleClick = () => {
-    const differentColor = this.props.changeColor()
     this.setState ({
-      color: differentColor
+      color: this.props.currentColor
     })
   }
 
 
   render() {
+
     return (
       <div className="cell"
         style={{backgroundColor: this.state.color}}
