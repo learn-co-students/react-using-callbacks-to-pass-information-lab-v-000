@@ -11,7 +11,6 @@ export default class Cell extends Component {
 
   clicker = () => {
     this.setState({color: this.props.getSelectedColor()});
-    console.log("Color" + this.state.color);
   }
   
   render() {
