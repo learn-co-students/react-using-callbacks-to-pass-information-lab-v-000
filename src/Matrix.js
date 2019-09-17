@@ -2,25 +2,21 @@ import React, { Component } from 'react';
 import chromeBoi from './data.js'
 import Cell from './Cell.js'
 import ColorSelector from './ColorSelector.js'
+//props and state are input data for the render function 
+//a component cannot chnge it's props 
+//state - serializable. can change the state of child components 
+export default class Matrix extends Component {  //convert raw data into HTML
 
-export default class Matrix extends Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      color: this.props.color  //needs to be a callback?
-    }
-  }
+  state = { selectedColor: ""}
 
   setColor = (hex) => {
-    const newColor = hex
     this.setState({
-      color: newColor
+      selectedColor: hex
     })
   }
 
   genRow = (vals) => (
-    vals.map((val, idx) => <Cell key={idx} color={val} />)
+    vals.map((val, idx) => <Cell key={idx} color={val} setColor={this.state.selectedColor}/>)
   )
 
   genMatrix = () => (
@@ -28,10 +24,10 @@ export default class Matrix extends Component {
   )
 
 
-  render() {
+  render() {   
     return (
       <div id="app">
-        <ColorSelector />
+        <ColorSelector color={this.setColor}/>
         <div id="matrix">
           {this.genMatrix()}
         </div>
@@ -39,7 +35,7 @@ export default class Matrix extends Component {
     )
   }
 
-}
+} 
 
 Matrix.defaultProps = {
   values: chromeBoi
