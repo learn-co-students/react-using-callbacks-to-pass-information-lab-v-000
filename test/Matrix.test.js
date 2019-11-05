@@ -14,7 +14,7 @@ import Matrix from '../src/Matrix'
 describe('<Matrix />', () => {
 
   it("change me to true in test/matrix.test.js once your app is working!", () => {
-    expect(false).to.equal(true)
+    expect(true).to.equal(true)
   })
 
 })
