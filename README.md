@@ -5,7 +5,7 @@
 - Practice using state, props, and events
 - Practice using callbacks to effect change up and down the component tree
 
-## Introduction
+ ## Introduction
 
 In React, **props** are used to pass information _down_ the component tree, from
 parents to children. In order to propagate information in the opposite
@@ -134,14 +134,14 @@ background color of the returned `div`:
 import React, { Component } from 'react';
 
 export default class Cell extends Component {
-  
+
   constructor(props) {
     super(props)
     this.state = {
       color: this.props.color
     }
   }
-  
+
   render() {
     return (
       <div className="cell"
@@ -150,7 +150,7 @@ export default class Cell extends Component {
       </div>
     )
   }
-  
+
 }
 ```
 
@@ -390,14 +390,14 @@ method like we've seen before:
 import React, { Component } from 'react';
 
 export default class Cell extends Component {
-  
+
   constructor(props) {
     super(props)
     this.state = {
       color: this.props.color
     }
   }
-  
+
   handleClick = () => {
     this.setState({
       color: this.props.selectedColor
@@ -412,7 +412,7 @@ export default class Cell extends Component {
       </div>
     )
   }
-  
+
 }
 ```
 
