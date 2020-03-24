@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import chromeBoi from './data.js'
+import learnSymbol from './data.js'
 import Cell from './Cell.js'
 import ColorSelector from './ColorSelector.js'
 
@@ -43,5 +43,5 @@ export default class Matrix extends Component {
 }
 
 Matrix.defaultProps = {
-  values: chromeBoi
+  values: learnSymbol
 }

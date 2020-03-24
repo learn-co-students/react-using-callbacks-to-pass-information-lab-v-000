@@ -1,5 +1,9 @@
 # React Using Callbacks to Pass Information Code-Along
 
+## Cool Graphics
+Here is an illustration to show what is going on with this workspace.
+<a href="https://imgur.com/zp9noLk"><img src="https://i.imgur.com/zp9noLk.jpg" title="Using Callbacks" /></a>
+
 ## Objectives
 
 - Practice using state, props, and events
@@ -134,14 +138,14 @@ background color of the returned `div`:
 import React, { Component } from 'react';
 
 export default class Cell extends Component {
-  
+
   constructor(props) {
     super(props)
     this.state = {
       color: this.props.color
     }
   }
-  
+
   render() {
     return (
       <div className="cell"
@@ -150,7 +154,7 @@ export default class Cell extends Component {
       </div>
     )
   }
-  
+
 }
 ```
 
@@ -390,14 +394,14 @@ method like we've seen before:
 import React, { Component } from 'react';
 
 export default class Cell extends Component {
-  
+
   constructor(props) {
     super(props)
     this.state = {
       color: this.props.color
     }
   }
-  
+
   handleClick = () => {
     this.setState({
       color: this.props.selectedColor
@@ -412,7 +416,7 @@ export default class Cell extends Component {
       </div>
     )
   }
-  
+
 }
 ```
 
