@@ -7,15 +7,13 @@
 
 ## Introduction
 
-In React, **props** are used to pass information _down_ the component tree, from
-parents to children. In order to propagate information in the opposite
-direction, we can use callback functions, also passed down as props from parent
-components to children. However, because these functions are defined _in the
-parent_, **they will still be in that context if called from a child component**.
+  -In React, **props** are used to pass information _down_ the component tree, from
+parents to children. 
+  -In order to propagate information in the opposite direction, we can use callback functions, also passed down as props from parent components to children. However, because these functions are defined _in the parent_, **they will still be in that context if called from a child component**.
 
-This allows the callback to be _owned_ by a different component than the one
-invoking it. Once invoked, the callback can effect change in the component that
-_owns it_, instead of the component that _called it_.
+  -This allows the callback to be _owned_ by a different component than the one
+    invoking it. Once invoked, the callback can effect change in the component that
+    _owns it_, instead of the component that _called it_.
 
 For this code-along, we'll explore this concept by creating an interactive "pixel"
 drawing app entirely out React components and data.
@@ -61,11 +59,11 @@ import Matrix from './Matrix.js'
 ReactDOM.render(<Matrix values={learnSymbol} />, document.getElementById('root'));
 ```
 
-This code is already provided, but take a moment to note the setup. The
-`Matrix` component is the only thing rendered, and is passed a `values` prop. If you
-run `npm install && npm start`, you should see this data - it is the symbol from
-[Learn.co](https://learn.co), pixelated! However, each "pixel" is actually a
-`div`. You can inspect each one in the browser to confirm!
+This code is already provided, but take a moment to note the setup. 
+The `Matrix` component is the only thing rendered, and is passed a `values` prop. 
+If you run `npm install && npm start`, you should see this data - it is the symbol from
+[Learn.co](https://learn.co), pixelated! 
+However, each "pixel" is actually a `div`. You can inspect each one in the browser to confirm!
 
 The data used to create these `div`s comes from `src/data.js`, and is stored as
 an array of arrays of strings, each representing a hexadecimal color value.
@@ -112,10 +110,9 @@ Matrix.defaultProps = {
 }
 ```
 
-`Matrix`, as seen above, renders a `div` containing the `ColorSelector`
-component and another `div`. Within this nested `div` is a function call to
-`this.genMatrix()`. In this function, `this.props.values` is used to return a map
-of JSX `div`s.
+`Matrix`, as seen above, renders a `div` containing the `ColorSelector` component and another `div`. 
+
+Within this nested `div` is a function call to `this.genMatrix()`. In this function, `this.props.values` is used to return a map of JSX `div`s.
 
 > **Aside**: Remember that when using arrow functions, you can use parentheses
 > instead of curly braces to implicitly return a value.
