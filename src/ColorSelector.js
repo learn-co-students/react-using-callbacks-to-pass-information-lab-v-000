@@ -6,6 +6,7 @@ export default class ColorSelector extends Component {
   //   this.props.setSelectedColor(color)
   // } That won't work; I'd still need to pass the color to it from makeColorSwatches, which then requires onClick={() => {this.callback(str)}}
   // It would make more sense in that case to just do onClick={() => this.props.setSelectedColor(str)}
+  // Update: Using an arrow function in the callback isn't recommended. Check out the paragraph right above https://reactjs.org/docs/handling-events.html#passing-arguments-to-event-handlers
 
   makeColorSwatches = () => (
     ["#F00", "#F80", "#FF0", "#0F0", "#00F", "#508", "#90D", "#FFF", "#000"].map((str, idx) => {
